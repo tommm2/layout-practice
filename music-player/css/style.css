@@ -1,0 +1,124 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #DFDFDF;
+  font-family: "Lato", sans-serif;
+}
+
+button:focus {
+  outline: 0;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.music-container {
+  box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.25), 8px 8px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  width: 400px;
+  height: 600px;
+  background-color: 　 #E1E1E1;
+  border-radius: 0.5rem;
+}
+@media (max-width: 400px) {
+  .music-container {
+    width: 350px;
+    height: 500px;
+  }
+}
+.music-container .top-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 8px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #000000;
+  color: #fff;
+}
+.music-container .music-img {
+  box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.25), 8px 8px 16px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 2rem;
+}
+.music-container .music-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 2rem;
+}
+.music-container .music-info {
+  color: #404040;
+  text-align: center;
+}
+.music-container .music-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.music-container .music-info small {
+  font-size: 20px;
+}
+.music-container .progress-bar {
+  width: 150px;
+}
+.music-container .progress-bar .time {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.music-container .progress-bar .progress-container {
+  box-shadow: inset -8px -8px 16px rgba(255, 255, 255, 0.25), inset 8px 8px 16px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+  background-color: 　 #E1E1E1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  height: 8px;
+  width: 100%;
+}
+.music-container .progress-bar .progress {
+  background: #000000;
+  border-radius: 5px;
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+.music-container .btn-group .btn {
+  box-shadow: -8px -8px 16px rgba(255, 255, 255, 0.25), 8px 8px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: 15px 20px;
+  margin: 0 15px;
+  font-size: 20px;
+  background-color: #DFDFDF;
+}
+.music-container .btn-group .btn.btn-start {
+  font-size: 24px;
+}
+.music-container .btn-group .btn:hover {
+  box-shadow: inset -8px -8px 16px rgba(255, 255, 255, 0.25), inset 8px 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/*# sourceMappingURL=style.css.map */

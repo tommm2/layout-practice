@@ -1,0 +1,42 @@
+// flex 排版
+@mixin d-flex( $direction: null, $align: null, $justify: null) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// grid 排版
+@mixin d-grid($display: grid, $gap: 20px, $num: 2) {
+  display: $display;
+  gap: 20px;
+  grid-template-columns: repeat($num, 1fr);
+}
+
+// position
+@mixin position($pos, $top: null, $bottom: null, $right: null, $left: null) {
+  position: $pos;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  left: $left;
+}
+
+// RWD
+@mixin pc-large {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin pc-middle {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 500px) {
+    @content;
+  }
+}

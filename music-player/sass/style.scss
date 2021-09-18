@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@mixin d-flex($display: flex, $direction: row, $align: center, $justify: center) {
+  display: $display;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin b-shadow ($inset: null){
+  box-shadow: 
+    $inset -8px -8px 16px rgba(255, 255, 255, 0.25), 
+    $inset 8px 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+$bg-color: #DFDFDF;
+$content-color:　#E1E1E1;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+body {
+  @include d-flex($direction: column);
+  min-height: 100vh;
+  background-color: $bg-color;
+  font-family: 'Lato', sans-serif;
+}
+
+button:focus {
+  outline: 0
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.music-container {
+  @include b-shadow();
+  @include d-flex($direction: column, $justify: space-around);
+  position: relative;
+  width: 400px;
+  height: 600px;
+  background-color: $content-color;
+  border-radius: 0.5rem;
+  @media (max-width: 400px) {
+    width: 350px;
+    height: 500px;
+  }
+  .top-info {
+    @include d-flex($justify: space-between);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background-color: #000000;
+    color: #fff;
+  }
+  .music-img {
+    @include b-shadow();
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 2rem;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 2rem;
+    }
+  }
+  .music-info {
+    color: #404040;
+    text-align: center;
+    h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    small {
+      font-size: 20px;
+    }
+    
+  }
+  .progress-bar {
+    width: 150px;
+    .time {
+      @include d-flex($justify: center);
+    }
+    .progress-container {
+      @include b-shadow(inset);
+      margin-top: 10px;
+      background-color: $content-color;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      height: 8px;
+      width: 100%;
+    }
+    .progress {
+      background: #000000;
+      border-radius: 5px;
+      height: 100%;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+  }
+  .btn-group {
+    .btn {
+      @include b-shadow;
+      cursor: pointer;
+      border: 0;
+      border-radius: 50%;
+      padding: 15px 20px;
+      margin: 0 15px;
+      font-size: 20px;
+      background-color: $bg-color;
+      &.btn-start {
+        font-size: 24px;
+      }
+      &:hover {
+        @include b-shadow(inset);
+      }
+    }
+  }
+}

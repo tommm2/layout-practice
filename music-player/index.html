@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Music Player</title>
+</head>
+
+<body>
+  <h1>Music Player</h1>
+  <div id="app" class="music-container">
+    <div class="top-info">
+      <span class="current-time">{{ currentTime }}</span>
+      <i class="fas fa-battery-full"></i>
+    </div>
+    <div class="music-img">
+      <img :src="data[index].img">
+    </div>
+
+    <div class="music-info">
+      <h3>{{ data[index].author }}</h3>
+      <p>{{ data[index].name }}</p>
+    </div>
+
+    <div class="progress-bar">
+      <div class="time">
+        <span>{{ timestamp }}</span>
+      </div>
+      <div @click="setTime($event)" class="progress-container">
+        <div :style="{'width': progress }" class="progress"></div>
+      </div>
+    </div>
+    
+    <div class="btn-group">
+      <button type="button" @click="prevSong" class="btn btn-prev">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button type="button" @click="playSong" class="btn btn-start">
+        <i v-if="!isPlay" class="fas fa-play"></i>
+        <i v-else class="fas fa-pause"></i>
+      </button>
+      <button type="button" @click="nextSong" class="btn btn-next">
+        <i class="fas fa-step-forward"></i>
+      </button>
+    </div>
+    <!-- music sourc -->
+    <audio @ended="nextSong" @timeupdate="updateProgress" ref="audio">
+      <source :src="data[index].song">
+    </audio>
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

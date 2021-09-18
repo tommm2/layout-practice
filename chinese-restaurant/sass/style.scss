@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+@import "./mixin";
+
+$main-color: #ff9921;
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #313131;
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+h3 {
+  display: inline-block;
+  position: relative;
+  font-size: 2.5rem;
+  margin: 40px 0;
+  color: $main-color;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $main-color;
+  }
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+  a {
+    color: $main-color;
+  }
+  @include phone {
+    font-size: 2rem;
+  }
+}
+
+.media {
+  font-size: 2rem;
+  display: flex;
+  li {
+    margin: 0 10px;
+  }
+  .fb > a {
+    color: #8b9cc2;
+  }
+  .twitter > a {
+    color: #62c8f0;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("../images/banner.png") no-repeat center/cover;
+  nav {
+    @include position(fixed, 0);
+    @include d-flex(null, center, space-between);
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 2;
+    transition: all 0.3s ease-in;
+    .burger-container {
+      display: none;
+      label {
+        cursor: pointer;
+        font-size: 2rem;
+        color: #fff;
+      }
+      input:checked ~ .burger-menu {
+        height: 300px;
+      }
+      .burger-menu {
+        @include position(absolute, 0, 0, 0, 0);
+        height: 0px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 2px 3px 5px $main-color;
+        transition: all .3s ease-in-out;
+        div {
+          padding: 20px;
+          @include d-flex($align: center, $justify: space-around);
+        }
+        background-color: #313131;
+        li {
+          cursor: pointer;
+          font-size: 1.5rem;
+          height: 50px;
+          padding: 10px 0;
+          transition:background ease-in .3s ;
+          &:hover {
+            background-color: $main-color;
+          }
+        }
+      }
+      input {
+        display: none;
+      }
+      @include pc-middle {
+        display: block;
+      }
+    }
+    .menu {
+      li {
+        display: inline;
+        margin: 0 15px;
+        font-size: 1.5rem;
+        font-family: 900;
+        a {
+          position: relative;
+          color: #ffffff;
+          transition: 0.3s ease-in;
+          &::after {
+            content: "";
+            @include position(absolute, $bottom: -10px, $left: 0);
+            width: 0%;
+            height: 3px;
+            border-radius: 0.5rem;
+            background-color: $main-color;
+            transition: 0.3s ease-in;
+          }
+          &:hover {
+            color: $main-color;
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    &.show {
+      background-color: #313131;
+      box-shadow: 2px 3px 5px $main-color;
+    }
+  }
+  &::after {
+    content: "";
+    @include position(absolute, 0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  hgroup {
+    @include position(absolute, 60%, null, null, 50%);
+    z-index: 1;
+    opacity: 0;
+    font-size: 4rem;
+    transform: translateX(-50%);
+    color: $main-color;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 1s ease-in;
+    &.silde {
+      opacity: 1;
+      animation: slide 2s ease-in;
+      @keyframes slide {
+        0% {
+          opacity: 0;
+          transform: translateX(-220%);
+        }
+        90% {
+          transform: translateX(-30%);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  @include pc-middle {
+    hgroup {
+      font-size: 2rem;
+    }
+    .menu {
+      display: none;
+    }
+    .media {
+      display: none;
+    }
+  }
+  @include pc-middle {
+  }
+}
+
+main {
+  @include d-flex(column, center, center);
+  margin-top: 100px;
+  padding: 20px;
+  .food-cards {
+    @include d-grid($num: 2);
+    .card {
+      position: relative;
+      width: 600px;
+      height: 480px;
+      background: {
+        repeat: no-repeat;
+        size: 100% 100%;
+        position: center;
+      }
+      transition: all 0.2s ease-in;
+      .card-content {
+        @include position(absolute, 0, 0, null, null);
+        @include d-flex(column, null, space-between);
+        opacity: 0;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease-in;
+        .card-title {
+          color: $main-color;
+          font-size: 2.5rem;
+          font-weight: 900;
+        }
+        p {
+          color: #fff;
+          font-size: 1.5rem;
+          font-weight: 600;
+          line-height: 1.5;
+        }
+      }
+      &:hover {
+        background-size: 110% 110%;
+        box-shadow: 2px 2px 10px $main-color;
+        .card-content {
+          opacity: 1;
+        }
+      }
+      &.card1 {
+        background-image: url("../images/img_01.png");
+      }
+      &.card2 {
+        background-image: url("../images/img_02.png");
+      }
+      &.card3 {
+        background-image: url("../images/img_03.png");
+      }
+      &.card4 {
+        background-image: url("../images/img_04.png");
+      }
+    }
+    @include pc-large {
+      @include d-grid($num: 1);
+    }
+    @include pc-middle {
+      .card {
+        width: 500px;
+        height: 480px;
+      }
+    }
+    @include phone {
+      .card {
+        width: 350px;
+        height: 350px;
+        .card-content {
+          .card-title {
+            font-size: 2rem;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  .latest {
+    .latest-cards {
+      @include d-grid($num: 4);
+      .latest-card {
+        position: relative;
+        overflow-x: hidden;
+        .latest-content {
+          @include position(absolute, 0, 0, 0, 0);
+          @include d-flex($align: center, $justify: center);
+          transition: all 0.3s ease-in;
+          transform: translateX(-100%);
+          background-color: rgba(255, 153, 33, 0.8);
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        &:hover {
+          .latest-content {
+            transform: translateX(0%);
+          }
+        }
+      }
+      @include pc-large {
+        @include d-grid($num: 2);
+      }
+    }
+  }
+}
+
+footer {
+  @include d-flex(null, center, space-between);
+  margin: 40px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #fff;
+  @include pc-large {
+    @include d-flex(column, center, null);
+    .reserved {
+      margin: 20px 0;
+    }
+  }
+  @include pc-middle {
+    font-size: 1.2rem;
+  }
+  @include phone {
+    white-space: nowrap;
+  }
+}
