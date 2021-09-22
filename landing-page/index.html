@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="p-10">
+      <nav id="site-menu"
+        class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1">
+        <div
+          class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
+          <a href="#" class="no-underline py-1">
+            <h1 class="text-2xl text-blue-900 font-extrabold">
+              <strong class="text-blue-600">佳欣</strong>雲端教室
+            </h1>
+          </a>
+          <button id="menuBtn" class="hamburger block sm:hidden focus:outline-none" type="button">
+            <span class="hamburger__top-bun"></span>
+            <span class="hamburger__bottom-bun"></span>
+          </button>
+        </div>
+        <ul id="menu"
+          class="sm:flex flex-col sm:flex-row items-center hidden font-bold text-lg space-x-0 sm:space-x-4 space-y-4 sm:space-y-0 text-center sm:text-left">
+          <li class="hover:bg-blue-500 hover:text-white transition"><a href="#">帳號登入</a></li>
+          <li class="hover:bg-blue-500 hover:text-white transition"><a href="#">常見問題</a></li>
+          <li class="hover:bg-blue-500 hover:text-white transition"><a href="#">寬頻測試</a></li>
+          <li class="hover:bg-blue-500 hover:text-white transition"><a href="#">關於我們</a></li>
+          <li class="hover:bg-blue-500 hover:text-white transition"><a href="#">聯絡我們</a></li>
+        </ul>
+      </nav>
+      <section
+        class="mt-20 flex flex-col xl:flex-row justify-between items-center space-x-0 xl:space-x-10 space-y-10 xl:space-y-0">
+        <div class="tracking-wider space-y-4">
+          <h2 class="text-4xl font-bold">
+            I have always support you dream
+          </h2>
+          <p class="text-lg text-gray-700">
+            我們提供完善雲端教室，讓師生與教師密切互
+            動，打造完善數位雲端教室，給夢想的你，提
+            供良好學習空間。
+          </p>
+          <button class="btn btn-blue">立即體驗</button>
+        </div>
+        <img class="w-max md:w-full" src="/images/top.jpg" alt="top-img">
+      </section>
+    </header>
+    <main class="p-10">
+      <section class="mt-20">
+        <div class="flex justify-between items-center mb-20">
+          <h3 class="text-2xl font-bold">雲端教室</h3>
+          <button class="btn btn-blue">關於我們</button>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <li class="card bg-img-1">
+            <div class="blur-container">
+              數據整合
+            </div>
+          </li>
+          <li class="card bg-img-2">
+            <div class="blur-container">頻寬加速</div>
+          </li>
+          <li class="card bg-img-3">
+            <div class="blur-container">串流直播</div>
+          </li>
+        </ul>
+      </section>
+      <section class="mt-20">
+        <div class="flex justify-between items-center mb-20">
+          <h3 class="text-2xl font-bold">服務功能</h3>
+          <button class="btn btn-blue">馬上了解</button>
+        </div>
+        <ul class="grid grid-cols-1 md:grid-cols-4 gap-10 text-white">
+          <li class="service-card">
+            <i class="fas fa-wifi text-8xl"></i>
+            <div class="text-center space-y-4">
+              <p class="text-3xl">頻寬加速</p>
+              <p>調整網路流量數據</p>
+            </div>
+          </li>
+          <li class="service-card">
+            <i class="fas fa-video text-8xl"></i>
+            <div class="text-center space-y-4">
+              <p class="text-3xl">串流直播</p>
+              <p>提供師生密切互動</p>
+            </div>
+          </li>
+          <li class="service-card">
+            <i class="fas fa-shield-alt text-8xl"></i>
+            <div class="text-center space-y-4">
+              <p class="text-3xl">安全上網</p>
+              <p>提供 SSL 安全上網機制</p>
+            </div>
+          </li>
+          <li class="service-card">
+            <i class="fas fa-comment-alt text-8xl"></i>
+            <div class="text-center space-y-4">
+              <p class="text-3xl">代辦清單</p>
+              <p>提供</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section
+        class="mt-20 grid grid-cols-1 md:grid-cols-2 items-center space-y-10 md:space-y-0 space-x-0 md:space-x-10">
+        <img class="w-full col-span-1" src="/images/paint.jpg" alt="paint-img">
+        <div class="tracking-wider col-span-1 space-y-4 mx-auto">
+          <h4 class="text-2xl font-bold text-gray-800">
+            最多元的雲端教室
+          </h4>
+          <p class="text-lg text-gray-700">
+            我們提供完善雲端教室，讓師生與教師密切互
+            動，打造完善數位雲端教室，給夢想的你，提
+            供良好學習空間。
+          </p>
+        </div>
+      </section>
+      <section class="mt-20 grid grid-cols-1 md:grid-cols-2 items-center space-y-10 md:space-y-0">
+        <img class="w-full block md:hidden" src="/images/white-line.jpg" alt="paint-img">
+        <div class="tracking-wider space-y-4">
+          <h4 class="text-2xl font-bold text-gray-800">
+            給需要學習的你 / 妳
+          </h4>
+          <p class="text-lg text-gray-700 pr-0 md:pr-10">
+            我們提供完善雲端教室，讓師生與教師密切互
+            動，打造完善數位雲端教室，給夢想的你，提供良好學習空間。
+          </p>
+        </div>
+        <img class="w-full hidden md:block" src="/images/white-line.jpg" alt="paint-img">
+      </section>
+    </main>
+    <footer class="p-28 bg-gray-500 flex flex-col md:flex-row justify-between items-center text-lg text-white
+    space-y-10 md:space-y-0">
+      <nav>
+        <ul class="space-y-4">
+          <li><a href="#">帳號登入</a></li>
+          <li><a href="#">常見問題</a></li>
+          <li><a href="#">寬頻測試</a></li>
+          <li><a href="#">關於我們</a></li>
+          <li><a href="#">聯絡我們</a></li>
+        </ul>
+      </nav>
+      <div class="flex flex-col justify-between p-4 space-y-8">
+        <p>加欣科技股份有限公司</p>
+        <div>
+          <p>+886-1234-6789</p>
+          <p>LiveTeach@lifeu.com.tw</p>
+          <p>台中市市府路西區89號6樓</p>
+        </div>
+        <p>佳欣雲端教室 &copy; Copyright All Rights Reserved</p>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
