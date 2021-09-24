@@ -6,4 +6,4 @@
 -------------|:-----:|
 中華餐廳      | [demo](https://tommm2.github.io/layout-practice/chinese-restaurant) |
 音樂撥放器    | [demo](https://tommm2.github.io/layout-practice/music-player) |
-Landing Page   | [demo](https://tommm2.github.io/layout-practice/landing-page) |
+Weather UI | [demo](https://tommm2.github.io/layout-practice/weather-ui) |
